@@ -1,0 +1,635 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background: #f5f5f5;
+    color: #2a2a2a;
+    transition: background 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+    background: #0f1419;
+    color: #e0e0e0;
+}
+
+/* ==================== HEADER ==================== */
+.app-header {
+    background: linear-gradient(135deg, #1a2844 0%, #2d4a6e 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-logo {
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.header-icons span {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.header-icons span:hover {
+    transform: scale(1.1);
+}
+
+/* ==================== WELCOME SECTION ==================== */
+.welcome-section {
+    background: linear-gradient(135deg, #1a2844 0%, #6b5b95 100%);
+    color: white;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.greeting {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tagline {
+    font-size: 14px;
+    opacity: 0.95;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* ==================== VERSE OF THE DAY ==================== */
+.verse-card {
+    background: linear-gradient(135deg, #1a2844 0%, #2d4a6e 100%);
+    border-radius: 16px;
+    padding: 30px 20px;
+    margin: 20px;
+    color: white;
+    box-shadow: 0 8px 24px rgba(26, 40, 68, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.verse-badge {
+    background: rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.verse-text {
+    font-size: 18px;
+    line-height: 1.8;
+    font-style: italic;
+    font-weight: 300;
+    margin: 0 0 15px 0;
+    color: #ffffff;
+}
+
+.verse-reference {
+    font-size: 13px;
+    color: #d4af37;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    letter-spacing: 0.5px;
+}
+
+.verse-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.verse-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.verse-btn:hover {
+    background: rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+.read-btn {
+    background: #d4af37 !important;
+    color: #1a2844 !important;
+    font-weight: 700;
+}
+
+.read-btn:hover {
+    background: #e5c158 !important;
+}
+
+/* ==================== QUICK ACTIONS ==================== */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.action-card {
+    background: white;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #2a2a2a;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.action-card:hover {
+    border-color: #d4af37;
+    box-shadow: 0 8px 16px rgba(212, 175, 55, 0.15);
+    transform: translateY(-4px);
+}
+
+body.dark-mode .action-card {
+    background: #1a1f2e;
+    border-color: #2d3748;
+    color: #e0e0e0;
+}
+
+.action-icon {
+    font-size: 32px;
+}
+
+.action-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2a2a2a;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body.dark-mode .action-label {
+    color: #e0e0e0;
+}
+
+/* ==================== SECTION TITLE ==================== */
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: #2a2a2a;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body.dark-mode .section-title {
+    color: #e0e0e0;
+}
+
+/* ==================== FEATURED VERSES ==================== */
+.featured-section {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .featured-section {
+    background: #1a1f2e;
+}
+
+.verse-item {
+    padding: 15px;
+    border-left: 4px solid #d4af37;
+    background: #fffbf0;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+body.dark-mode .verse-item {
+    background: #2d3748;
+}
+
+.verse-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2);
+}
+
+.verse-item-text {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 5px;
+    color: #2a2a2a;
+}
+
+body.dark-mode .verse-item-text {
+    color: #e0e0e0;
+}
+
+.verse-item-ref {
+    font-size: 12px;
+    color: #d4af37;
+    font-weight: 600;
+}
+
+/* ==================== SERMONS SECTION ==================== */
+.sermons-section {
+    padding: 20px;
+    background: #f9f9f9;
+    margin-top: 30px;
+}
+
+body.dark-mode .sermons-section {
+    background: #0f1419;
+}
+
+.sermon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sermon-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+body.dark-mode .sermon-card {
+    background: #1a1f2e;
+}
+
+.sermon-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+}
+
+.sermon-image {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.sermon-info {
+    padding: 15px;
+}
+
+.sermon-category {
+    display: inline-block;
+    background: #ffe8cc;
+    color: #d97706;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.sermon-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 8px 0;
+    color: #2a2a2a;
+    line-height: 1.4;
+}
+
+body.dark-mode .sermon-title {
+    color: #e0e0e0;
+}
+
+.sermon-speaker {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    font-weight: 500;
+}
+
+body.dark-mode .sermon-speaker {
+    color: #a0aec0;
+}
+
+.sermon-meta {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 8px;
+}
+
+/* ==================== STREAK SECTION ==================== */
+.streak-card {
+    background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px;
+    text-align: center;
+}
+
+.streak-badge {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.streak-progress {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.day-indicator {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.3);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.day-indicator.completed {
+    background: rgba(255,255,255,0.9);
+    color: #f5576c;
+}
+
+/* ==================== BOTTOM NAVIGATION ==================== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 200;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .bottom-nav {
+    background: #1a1f2e;
+    border-top-color: #2d3748;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #6b7280;
+    transition: all 0.2s;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: #1a2844;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+body.dark-mode .nav-item.active {
+    color: #d4af37;
+}
+
+.nav-icon {
+    font-size: 24px;
+}
+
+.nav-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+body {
+    padding-bottom: 70px;
+}
+
+/* ==================== DARK MODE TOGGLE ==================== */
+.theme-toggle {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1a2844;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+body.dark-mode .theme-toggle {
+    background: #d4af37;
+    color: #1a2844;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* ==================== GOALS SECTION ==================== */
+.goals-section {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .goals-section {
+    background: #1a1f2e;
+}
+
+.goal-item {
+    margin-bottom: 20px;
+}
+
+.goal-name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2a2a2a;
+    font-size: 14px;
+}
+
+body.dark-mode .goal-name {
+    color: #e0e0e0;
+}
+
+.goal-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+body.dark-mode .goal-bar {
+    background: #2d3748;
+}
+
+.goal-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #d4af37, #e5c158);
+}
+
+.goal-stat {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* ==================== BADGES SECTION ==================== */
+.badges-section {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .badges-section {
+    background: #1a1f2e;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.badge {
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    background: #f9f9f9;
+    opacity: 0.4;
+}
+
+body.dark-mode .badge {
+    background: #2d3748;
+}
+
+.badge.unlocked {
+    background: #fffbf0;
+    border: 2px solid #d4af37;
+    opacity: 1;
+}
+
+body.dark-mode .badge.unlocked {
+    background: #2d3748;
+    border: 2px solid #d4af37;
+}
+
+.badge-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.badge-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2a2a2a;
+}
+
+body.dark-mode .badge-name {
+    color: #e0e0e0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 480px) {
+    .greeting {
+        font-size: 24px;
+    }
+
+    .verse-text {
+        font-size: 16px;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
+    }
+
+    .badges-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

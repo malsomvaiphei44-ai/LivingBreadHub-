@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivingBreadHub - Modern Bible App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<div class="app-header">
+    <div class="header-logo">📖 LivingBreadHub</div>
+    <div class="header-icons">
+        <span onclick="alert('Search coming soon!')">🔍</span>
+        <span onclick="alert('Settings coming soon!')">⚙️</span>
+        <span onclick="alert('Profile coming soon!')">👤</span>
+    </div>
+</div>
+
+<!-- ==================== WELCOME SECTION ==================== -->
+<div class="welcome-section">
+    <h2 class="greeting" id="greeting">Good Morning, Friend</h2>
+    <p class="tagline">Let the word of God guide your day</p>
+</div>
+
+<!-- ==================== VERSE OF THE DAY ==================== -->
+<div class="verse-card">
+    <div class="verse-badge">✨ VERSE OF THE DAY</div>
+    <p class="verse-text">"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."</p>
+    <p class="verse-reference">John 3:16</p>
+    <div class="verse-actions">
+        <button class="verse-btn" onclick="shareVerse()">📤 Share</button>
+        <button class="verse-btn" onclick="bookmarkVerse(event)">❤️ Save</button>
+        <button class="verse-btn read-btn" onclick="readFull()">📖 Read Full →</button>
+    </div>
+</div>
+
+<!-- ==================== QUICK ACTIONS ==================== -->
+<div class="quick-actions">
+    <div class="action-card" onclick="goToSection('bible')">
+        <span class="action-icon">📖</span>
+        <span class="action-label">Read Bible</span>
+    </div>
+    <div class="action-card" onclick="goToSection('sermons')">
+        <span class="action-icon">🎙️</span>
+        <span class="action-label">Sermons</span>
+    </div>
+    <div class="action-card" onclick="goToSection('quiz')">
+        <span class="action-icon">❓</span>
+        <span class="action-label">Quiz</span>
+    </div>
+    <div class="action-card" onclick="goToSection('devotions')">
+        <span class="action-icon">🙏</span>
+        <span class="action-label">Devotions</span>
+    </div>
+</div>
+
+<!-- ==================== FEATURED VERSES ==================== -->
+<div class="featured-section">
+    <h3 class="section-title">✨ Trending This Week</h3>
+    
+    <div class="verse-item">
+        <div class="verse-item-text">"Trust in the Lord with all your heart and lean not on your own understanding..."</div>
+        <div class="verse-item-ref">Proverbs 3:5-6</div>
+    </div>
+    
+    <div class="verse-item">
+        <div class="verse-item-text">"I can do all things through Christ who strengthens me..."</div>
+        <div class="verse-item-ref">Philippians 4:13</div>
+    </div>
+    
+    <div class="verse-item">
+        <div class="verse-item-text">"For I know the plans I have for you, declares the Lord..."</div>
+        <div class="verse-item-ref">Jeremiah 29:11</div>
+    </div>
+    
+    <div class="verse-item">
+        <div class="verse-item-text">"Jesus answered, I am the way and the truth and the life..."</div>
+        <div class="verse-item-ref">John 14:6</div>
+    </div>
+</div>
+
+<!-- ==================== STREAK TRACKER ==================== -->
+<div class="streak-card">
+    <div class="streak-badge">🔥 7-Day Streak</div>
+    <p style="margin-bottom: 15px;">Keep reading daily to maintain your streak!</p>
+    <div class="streak-progress">
+        <div class="day-indicator completed">M</div>
+        <div class="day-indicator completed">T</div>
+        <div class="day-indicator completed">W</div>
+        <div class="day-indicator completed">T</div>
+        <div class="day-indicator completed">F</div>
+        <div class="day-indicator completed">S</div>
+        <div class="day-indicator">S</div>
+    </div>
+</div>
+
+<!-- ==================== READING GOALS ==================== -->
+<div class="goals-section">
+    <h3 class="section-title">📊 Your Reading Goals</h3>
+    
+    <div class="goal-item">
+        <span class="goal-name">This Week</span>
+        <div class="goal-bar">
+            <div class="goal-fill" style="width: 65%"></div>
+        </div>
+        <span class="goal-stat">13 / 20 chapters</span>
+    </div>
+    
+    <div class="goal-item">
+        <span class="goal-name">This Month</span>
+        <div class="goal-bar">
+            <div class="goal-fill" style="width: 42%"></div>
+        </div>
+        <span class="goal-stat">85 / 200 chapters</span>
+    </div>
+</div>
+
+<!-- ==================== SERMONS SECTION ==================== -->
+<div class="sermons-section">
+    <h2 class="section-title">🎙️ Featured Sermons</h2>
+    
+    <div class="sermon-list">
+        <div class="sermon-card">
+            <div class="sermon-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <button class="play-btn">▶️</button>
+            </div>
+            <div class="sermon-info">
+                <span class="sermon-category">Faith</span>
+                <h3 class="sermon-title">The Power of Belief</h3>
+                <p class="sermon-speaker">Pastor John Smith</p>
+                <div class="sermon-meta">45:32 • Mar 15, 2026</div>
+            </div>
+        </div>
+        
+        <div class="sermon-card">
+            <div class="sermon-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <button class="play-btn">▶️</button>
+            </div>
+            <div class="sermon-info">
+                <span class="sermon-category" style="background: #fce7f3; color: #ec4899;">Love</span>
+                <h3 class="sermon-title">God's Love Never Fails</h3>
+                <p class="sermon-speaker">Pastor Sarah Johnson</p>
+                <div class="sermon-meta">52:15 • Mar 14, 2026</div>
+            </div>
+        </div>
+        
+        <div class="sermon-card">
+            <div class="sermon-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                <button class="play-btn">▶️</button>
+            </div>
+            <div class="sermon-info">
+                <span class="sermon-category" style="background: #dcfce7; color: #16a34a;">Grace</span>
+                <h3 class="sermon-title">Living by God's Grace</h3>
+                <p class="sermon-speaker">Bishop Michael Brown</p>
+                <div class="sermon-meta">48:20 • Mar 13, 2026</div>
+            </div>
+        </div>
+        
+        <div class="sermon-card">
+            <div class="sermon-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                <button class="play-btn">▶️</button>
+            </div>
+            <div class="sermon-info">
+                <span class="sermon-category" style="background: #fed7aa; color: #b45309;">Hope</span>
+                <h3 class="sermon-title">Finding Hope in Difficult Times</h3>
+                <p class="sermon-speaker">Reverend David Wilson</p>
+                <div class="sermon-meta">38:45 • Mar 12, 2026</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== ACHIEVEMENTS/BADGES ==================== -->
+<div class="badges-section">
+    <h3 class="section-title">🏆 Your Achievements</h3>
+    
+    <div class="badges-grid">
+        <div class="badge unlocked">
+            <span class="badge-icon">📖</span>
+            <span class="badge-name">Bible Master</span>
+        </div>
+        
+        <div class="badge unlocked">
+            <span class="badge-icon">🎯</span>
+            <span class="badge-name">Quiz Ace</span>
+        </div>
+        
+        <div class="badge">
+            <span class="badge-icon">🌙</span>
+            <span class="badge-name">Night Reader</span>
+        </div>
+        
+        <div class="badge unlocked">
+            <span class="badge-icon">💪</span>
+            <span class="badge-name">Dedicated</span>
+        </div>
+        
+        <div class="badge">
+            <span class="badge-icon">🚀</span>
+            <span class="badge-name">Fast Learner</span>
+        </div>
+        
+        <div class="badge">
+            <span class="badge-icon">⭐</span>
+            <span class="badge-name">Legend</span>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== BOTTOM NAVIGATION ==================== -->
+<nav class="bottom-nav">
+    <a href="#" class="nav-item active" onclick="setActive(event)">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+    </a>
+    <a href="#" class="nav-item" onclick="setActive(event)">
+        <span class="nav-icon">📖</span>
+        <span class="nav-label">Bible</span>
+    </a>
+    <a href="#" class="nav-item" onclick="setActive(event)">
+        <span class="nav-icon">🎙️</span>
+        <span class="nav-label">Sermons</span>
+    </a>
+    <a href="#" class="nav-item" onclick="setActive(event)">
+        <span class="nav-icon">❓</span>
+        <span class="nav-label">Quiz</span>
+    </a>
+    <a href="#" class="nav-item" onclick="setActive(event)">
+        <span class="nav-icon">👤</span>
+        <span class="nav-label">Profile</span>
+    </a>
+</nav>
+
+<!-- ==================== DARK MODE TOGGLE ==================== -->
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
